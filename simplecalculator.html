@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Simple Calculator by Jackie Tran</h2>
+
+
+<label for="num1">Number 1:</label><br>
+<input type="text" id="num1" name="num1" value=""><br>
+<label for="num2">Number 2:</label><br>
+<input type="text" id="num2" name="num2" value=""><br><br>
+
+<button type="button" onclick="Add()">Add</button>
+<button type="button" onclick="Sub()">Sub</button>
+<button type="button" onclick="Mul()">Mult</button>
+<button type="button" onclick="Div()">Div</button>
+
+<p id="result">No Operation!</p>
+
+<button type="button" onclick="Publish()">Publish</button>
+
+<style> 
+.button {
+    position: absolute;
+    top:50%;
+    background-color:#0a0a23;
+    color: #fff;
+}
+</style>
+
+<script> 
+function Add() {
+    var numResult = parseInt(document.getElementById('num1').value) + parseInt(document.getElementById("num2").value)
+    document.getElementById("result").innerHTML = numResult;
+}
+function Sub() {
+    var numResult = parseInt(document.getElementById('num1').value) - parseInt(document.getElementById("num2").value)
+    document.getElementById("result").innerHTML = numResult;
+}
+function Mul() {
+    var numResult = parseInt(document.getElementById('num1').value) * parseInt(document.getElementById("num2").value)
+    document.getElementById("result").innerHTML = numResult;
+}
+function Div() {
+    var numResult = parseInt(document.getElementById('num1').value) / parseInt(document.getElementById("num2").value)
+    if(numResult == Number.POSITIVE_INFINITY) {
+        document.getElementById("result").innerHTML = "Div by Zero!";
+    }
+    else {
+        document.getElementById("result").innerHTML = numResult;
+    }
+}
+function Publish() {
+    document.getElementById("result").innerHTML = "Message Published!";
+}
+</script>
+
+</body>
+</html>
